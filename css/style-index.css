@@ -1,0 +1,11 @@
+*{
+    background-color: #11120D;
+    color: var(--secondary);
+}
+
+:root { --primary: #11120D;
+        --secondary: #D8CFBC;
+        --accent: #565449;
+ }
+
+
