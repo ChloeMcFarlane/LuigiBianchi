@@ -5,12 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Luigi Bianchi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <!-- ALL FONTS IMPORT -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lobster&family=Momo+Signature&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
   </style>
-  <link rel="stylesheet" href ="css/style-index.css"/>
-
+  <link rel="stylesheet" href="css/style-index.css"/>
 </head>
 <body>
 
@@ -19,12 +17,9 @@
   <span class="brand">Luigi Bianchi</span>
   <ul class="nav-links">
     <li><a href="#">About</a></li>
-    <li><a href="#">Resume</a></li> 
-    <!-- TODO: CORRECT LINKS. WORK SHOULD BE RESUME -->
+    <li><a href="src/lbresume.pdf">Resume</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <!-- GALLERY SHOULG BE EVERYTHING -->
-    <li><a href="#">Contact</a></li>
-    <!-- NOT NECESSARY -->
+    <li><a href="/contact.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -36,9 +31,18 @@
     <div class="hero-inner-shape"></div>
     <div class="hero-inner-shape-2"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Actor · Musician · Dancer</p>
-      <h1 class="hero-name">Luigi<br/><em>Bianchi</em></h1>
-      <p class="hero-sub">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <div class="hero-left">
+        <p class="hero-eyebrow">Actor · Creator · Music</p>
+        <h1 class="hero-name">Luigi<br/><em>Bianchi</em></h1>
+        <p class="hero-sub">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <a href="#"></a>
+      </div>
+      <div class="hero-right">
+        <a href="src/lbresume.pdf" class="headshot-link">
+          <img src="src/lbheadshot1.png" alt="Luigi Bianchi headshot" class="hero-headshot" />
+          <div class="headshot-hover-label"><span>View Résumé</span></div>
+        </a>
+      </div>
     </div>
   </section>
 </div>
@@ -48,57 +52,34 @@
   <section id="statement">
     <div class="orb orb-s"></div>
     <div class="statement-grid reveal">
+
+      <!-- col 1: vertical sidebar label -->
       <div><span class="sidebar-label">Artist Statement</span></div>
+
+      <!-- col 2: headshot image styled like the hero -->
+      <div class="as-left">
+        <a href="src/lbresume.pdf" class="as-img-wrap">
+          <img src="src/lbheadshot1.png" alt="Luigi Bianchi" class="artist-statement-img" />
+        </a>
+      </div>
+
+      <!-- col 3: the quote -->
       <blockquote class="statement-text">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. <strong>Cupiditate</strong> maiores dicta ut asperiores enim, nesciunt ab tempore quisquam, sed perspiciatis tenetur, <strong>fuga</strong> rem porro animi repudiandae vero hic maxime odio.
-
       </blockquote>
+
     </div>
   </section>
 </div>
 
-<!-- ═══ PORTAL 2: PROJECTS ═══ -->
-<div class="portal" id="projects-portal">
-  <section id="projects">
-    <div class="orb orb-p"></div>
-    <div class="sec-head reveal">
-      <span class="sec-num">02</span>
-      <h2 class="sec-title">Selected Work</h2>
-    </div>
-    <div class="projects-list">
-      <div class="project-row reveal">
-        <span class="proj-idx">01</span>
-        <!-- TODO: EACH PROJECT SHOULD LEAD TO A SPECIFIC PIC -->
-        <div><div class="proj-name">Project Title One</div><div class="proj-tag">Theatre · 2024</div></div>
-        <span class="proj-arrow">→</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="proj-idx">02</span>
-        <div><div class="proj-name">Project Title Two</div><div class="proj-tag">Theatre · 2024</div></div>
-        <span class="proj-arrow">→</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="proj-idx">03</span>
-        <div><div class="proj-name">Project Title Three</div><div class="proj-tag">Music · 2023</div></div>
-        <span class="proj-arrow">→</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="proj-idx">04</span>
-        <div><div class="proj-name">Project Title Four</div><div class="proj-tag">Dance · 2023</div></div>
-        <span class="proj-arrow">→</span>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ═══ PORTAL 3: GALLERY ═══ -->
+<!-- ═══ PORTAL 2: GALLERY ═══ -->
 <div class="portal" id="gallery-portal">
   <section id="gallery">
     <div class="orb orb-g"></div>
     <div class="gallery-top reveal">
       <div>
         <span class="sec-num" style="display:block;line-height:1;color:rgba(200,230,150,0.1);">03</span>
-        <h2 class="sec-title" style="color:#d4eab4;">Gallery</h2>
+        <h2 class="sec-title" style="color:#4a8038;">Gallery</h2>
       </div>
       <div class="filter-row">
         <button class="filter-pill active" data-filter="all">All</button>
@@ -119,6 +100,39 @@
       <div class="masonry-item" data-cat="dance"><div class="img-ph h-md"><span>Photo 07</span></div><div class="img-ov"><span>2024</span></div></div>
       <div class="masonry-item" data-cat="dance"><div class="img-ph h-lg"><span>Photo 08</span></div><div class="img-ov"><span>2024</span></div></div>
       <a href="#"><div class="masonry-item-button" data-cat="tv"><div class="img-ph h-sm"><span>Button</span></div><div class="img-ov"><span>2024</span></div></div></a>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PORTAL 3: PROJECTS ═══ -->
+<div class="portal" id="projects-portal">
+  <section id="projects">
+    <div class="orb orb-p"></div>
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Selected Work</h2>
+    </div>
+    <div class="projects-list">
+      <div class="project-row reveal">
+        <span class="proj-idx">01</span>
+        <div><div class="proj-name">Project Title One</div><div class="proj-tag">Theatre · 2024</div></div>
+        <span class="proj-arrow">→</span>
+      </div>
+      <div class="project-row reveal">
+        <span class="proj-idx">02</span>
+        <div><div class="proj-name">Project Title Two</div><div class="proj-tag">Theatre · 2024</div></div>
+        <span class="proj-arrow">→</span>
+      </div>
+      <div class="project-row reveal">
+        <span class="proj-idx">03</span>
+        <div><div class="proj-name">Project Title Three</div><div class="proj-tag">Music · 2023</div></div>
+        <span class="proj-arrow">→</span>
+      </div>
+      <div class="project-row reveal">
+        <span class="proj-idx">04</span>
+        <div><div class="proj-name">Project Title Four</div><div class="proj-tag">Dance · 2023</div></div>
+        <span class="proj-arrow">→</span>
+      </div>
     </div>
   </section>
 </div>
@@ -176,7 +190,7 @@
   </section>
 </div>
 
-<!-- ═══ PORTAL 6: STICKERS ═══ -->
+<!-- ═══ PORTAL 6: STICKERS (commented out) ═══ -->
 <!-- <div class="portal" id="stickers-portal" style="background:#111a0e; border-radius:48px;">
   <section id="stickers">
     <div class="stickers-inner">
@@ -200,16 +214,14 @@
     <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
     <ul class="footer-links">
       <li><a href="#statement">About</a></li>
-      <li><a href="#projects">Work</a></li>
+      <li><a href="#projects">Resume</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#music">Music</a></li>
-      <li><a href="#voiceover">Voice</a></li>
-      <li><a href="#stickers">Stickers</a></li>
+      <li><a href="#music">Contact</a></li>
     </ul>
     <div class="footer-copy">© 2024 Luigi Bianchi</div>
   </div>
 </footer>
 
-<script src="js/index.js" > </script>
+<script src="js/index.js"></script>
 </body>
 </html>
