@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Luigi Bianchi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lobster&family=Momo+Signature&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+  </style>
+  <link rel="stylesheet" href="css/style-index.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <span class="brand">Luigi Bianchi</span>
+  <ul class="nav-links">
+    <li><a href="/index.html">About</a></li>
+    <li><a href="src/lbresume.pdf">Resume</a></li>
+    <li><a href="/gallery.html">Gallery</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ PORTAL 4: MUSIC ═══ -->
+<div class="portal" id="music-portal" style="background:#2e5424; border-radius:48px;">
+    <section id="music">
+      <div class="music-ghost">listen</div>
+      <div class="music-inner">
+        <div class="sec-head reveal" style="max-width:none;">
+          <span class="sec-num" style="color:rgba(100,160,60,0.12);">01</span>
+          <h2 class="sec-title" style="color:#9aca7a;">Music</h2>
+        </div>
+        <!-- Replace ARTIST_ID with Luigi's real Spotify artist ID -->
+        <div class="spotify-wrap reveal">
+          <iframe src="https://open.spotify.com/embed/artist/ARTIST_ID?utm_source=generator&theme=0"
+            width="100%" height="380" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- ═══ PORTAL 5: VOICE ═══ -->
+  <div class="portal" id="voice-portal" style="background:#1a2d14; border-radius:48px;">
+    <section id="voiceover">
+      <div class="orb orb-v"></div>
+      <div class="vo-inner">
+        <div class="sec-head reveal" style="max-width:none;">
+          <span class="sec-num" style="color:rgba(60,100,40,0.1);">02</span>
+          <h2 class="sec-title" style="color:#7aaa56;">Voice</h2>
+        </div>
+        <div class="vo-list">
+          <div class="vo-row reveal">
+            <button class="vo-btn" onclick="toggleVO(this)">▶</button>
+            <div><div class="vo-name">Main Reel — 2024</div><div class="vo-desc">Commercial · Animation · Narration</div></div>
+            <div class="vo-wave" id="vw1"></div>
+            <div class="vo-dur">2:14</div>
+          </div>
+          <div class="vo-row reveal">
+            <button class="vo-btn" onclick="toggleVO(this)">▶</button>
+            <div><div class="vo-name">Character Voices</div><div class="vo-desc">Animation · Gaming</div></div>
+            <div class="vo-wave" id="vw2"></div>
+            <div class="vo-dur">1:48</div>
+          </div>
+          <div class="vo-row reveal">
+            <button class="vo-btn" onclick="toggleVO(this)">▶</button>
+            <div><div class="vo-name">Documentary</div><div class="vo-desc">Narration · Long-form</div></div>
+            <div class="vo-wave" id="vw3"></div>
+            <div class="vo-dur">1:30</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+<!-- ═══ PORTAL 7: FOOTER ═══ -->
+<footer id="footer-portal">
+    <div class="footer-inner">
+      <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
+      <ul class="footer-links">
+        <li><a href="#statement">About</a></li>
+        <li><a href="#projects">Resume</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#music">Contact</a></li>
+      </ul>
+      <div class="footer-copy">© 2024 Luigi Bianchi</div>
+    </div>
+  </footer>
+  
+  <script src="js/index.js"></script>
+  </body>
+  </html>

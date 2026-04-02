@@ -669,9 +669,9 @@ nav.dark .nav-links a:hover { color: #a8cc84; }
 .footer-name { font-family: 'playfair', serif; font-size: 2.2rem; font-weight: 400; font-style: italic; color: #2e5424; line-height: 1.15; }
 .footer-name em { font-family: 'lobster', serif; }
 .footer-links { display: flex; flex-direction: column; gap: 9px; list-style: none; }
-.footer-links a { font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(80,140,40,0.25); text-decoration: none; transition: color 0.25s; }
-.footer-links a:hover { color: #4a8038; }
-.footer-copy { font-size: 0.57rem; letter-spacing: 0.1em; color: rgba(60,100,40,0.2); }
+.footer-links a { font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: #4a8038; text-decoration: none; transition: color 0.25s; }
+.footer-links a:hover { color: #4a803891; }
+.footer-copy { font-size: 0.57rem; letter-spacing: 0.1em; color: #7aaa56; }
 
 /* ── REVEAL ON SCROLL ── */
 .reveal {
