@@ -23,23 +23,37 @@
   
   * { box-sizing: border-box; margin: 0; padding: 0; }
   
+  /* ── RESET body to prevent style-index.css bleed ── */
   body {
-    background: var(--ink);
-    color: var(--text-main);
-    font-family: 'Playfair Display', Georgia, serif;
+    background: var(--ink) !important;
+    color: var(--text-main) !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
     min-height: 100vh;
+    /* Kill any margin/padding that style-index might set */
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
-  /* ── NAV (inherits from style-index, minor override) ── */
+  /* ── NAV — fully self-contained, overrides style-index ── */
   #navbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 52px;
-    height: 64px;
-    background: rgba(13,26,15,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 52px !important;
+    height: 64px !important;
+    background: rgba(13,26,15,0.88) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid var(--border) !important;
+    /* Reset anything style-index might add */
+    margin: 0 !important;
+    box-shadow: none !important;
   }
+  
   .brand {
     font-family: 'Lobster', serif;
     font-size: 1.4rem;
@@ -65,7 +79,9 @@
      HERO HEADER — bold, geometric, typographic
      ══════════════════════════════════════════════ */
   #gallery-header-portal {
-    padding: 140px 52px 80px;
+    /* 64px = navbar height. Keeps content from hiding under it. */
+    padding: 128px 52px 80px;
+    margin-top: 64px; /* push below fixed navbar — prevents the extra gap */
     background: var(--ink);
     position: relative;
     overflow: hidden;
@@ -334,8 +350,6 @@
     max-width: 1100px;
   }
   
-  .spotify-text { }
-  
   .section-eyebrow {
     font-size: 0.62rem;
     letter-spacing: 0.35em;
@@ -411,7 +425,6 @@
     gap: 24px;
     flex-wrap: wrap;
   }
-  .vo-header-left {}
   .section-subtitle {
     font-size: 0.88rem;
     color: var(--text-muted);
@@ -423,16 +436,16 @@
   .vo-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 24px;
   }
   
   .vo-card {
     background: var(--ink-soft);
     border: 1px solid var(--border-mid);
-    padding: 32px 28px 28px;
+    padding: 36px 32px 32px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     position: relative;
     transition: border-color 0.25s, background 0.25s;
     clip-path: polygon(0 0, 94% 0, 100% 6%, 100% 100%, 6% 100%, 0 94%);
@@ -442,14 +455,13 @@
     background: var(--forest);
   }
   
-  /* Category color tag — geometric corner pip */
   .vo-card::before {
     content: '';
     position: absolute;
     top: 0; right: 0;
     width: 0; height: 0;
-    border-top: 36px solid var(--moss);
-    border-left: 36px solid transparent;
+    border-top: 40px solid var(--moss);
+    border-left: 40px solid transparent;
     transition: border-top-color 0.25s;
   }
   .vo-card:hover::before { border-top-color: var(--sage); }
@@ -480,22 +492,97 @@
   }
   
   .vo-description {
-    font-size: 0.84rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.65;
     font-style: italic;
   }
   
-  /* Audio player — styled via accent-color + filter */
-  .vo-player {
-    width: 100%;
-    height: 36px;
-    margin-top: 4px;
-    accent-color: var(--fern);
-    opacity: 0.65;
-    transition: opacity 0.2s;
+  /* ── CUSTOM WAVEFORM PLAYER ── */
+  .vo-player-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+    padding: 18px 20px;
+    background: rgba(13,26,15,0.5);
+    border: 1px solid var(--border);
+    clip-path: polygon(0 0, 97% 0, 100% 20%, 100% 100%, 3% 100%, 0 80%);
   }
-  .vo-player:hover { opacity: 1; }
+  
+  .vo-play-btn {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--sage);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .vo-play-btn:hover {
+    background: var(--moss);
+    border-color: var(--fern);
+  }
+  .vo-play-btn.playing {
+    background: var(--moss);
+    border-color: var(--fern);
+  }
+  
+  /* Play triangle */
+  .play-icon {
+    display: block;
+    width: 0; height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 14px solid var(--fern);
+    margin-left: 3px;
+    transition: all 0.15s;
+  }
+  /* Pause bars */
+  .vo-play-btn.playing .play-icon {
+    width: 12px; height: 14px;
+    border: none;
+    border-left: 3.5px solid var(--fern);
+    border-right: 3.5px solid var(--fern);
+    margin-left: 0;
+  }
+  
+  .vo-waveform {
+    flex: 1;
+    position: relative;
+    height: 48px;
+    cursor: pointer;
+  }
+  .waveform-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .waveform-progress {
+    position: absolute;
+    top: 0; left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(107,163,111,0.15);
+    pointer-events: none;
+    transition: width 0.1s linear;
+  }
+  
+  .vo-time {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    font-variant-numeric: tabular-nums;
+    min-width: 28px;
+    text-align: right;
+  }
+  
+  .vo-audio { display: none; }
   
   /* ══════════════════════════════════════════════
      FOOTER
@@ -609,6 +696,6 @@
     #voiceover-portal,
     #footer-portal { padding-left: 20px; padding-right: 20px; }
     .gallery-title { font-size: clamp(52px, 15vw, 80px); }
-    #navbar { padding: 0 20px; }
+    #navbar { padding: 0 20px !important; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }

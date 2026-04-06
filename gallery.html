@@ -8,8 +8,9 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lobster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
-<link rel="stylesheet" href="css/style-index.css"/>
+<!-- Load gallery CSS FIRST so it isn't overridden by style-index -->
 <link rel="stylesheet" href="css/gallery.css"/>
+<link rel="stylesheet" href="css/style-index.css"/>
 </head>
 <body>
 
@@ -133,6 +134,7 @@
   1. Go to his Spotify artist page in a browser
   2. Copy the URL: https://open.spotify.com/artist/XXXXXXXXXXXXXX
   3. Replace REPLACE_WITH_ARTIST_ID below with the ID after /artist/
+  4. fix vo grid styling 
 -->
 <div id="spotify-portal">
   <div class="spotify-inner">
@@ -157,7 +159,8 @@
 </div>
 
 <!-- ═══ VOICE OVER PREVIEWS ═══ -->
-<div id="voiceover-portal">
+ <!-- TO-DO: BROKEN FIX LATER -->
+<!-- <div id="voiceover-portal">
   <div class="voiceover-inner">
 
     <div class="vo-header">
@@ -170,65 +173,53 @@
 
     <div class="vo-grid">
 
-      <div class="vo-card">
+      <div class="vo-card" data-audio="src/audio/commercial-demo.mp3">
         <div class="vo-card-header">
-          <span class="vo-label">Commercial</span>
-          <span class="vo-duration">0:32</span>
+          <span class="vo-label">ANIMATION</span>
+          <span class="vo-duration" data-total="0:32">0:32</span>
         </div>
         <div class="vo-divider"></div>
-        <p class="vo-description">Upbeat, conversational tone for brand spots.</p>
-        <!-- Replace src: src/audio/commercial-demo.mp3 -->
-        <audio controls class="vo-player">
+        <p class="vo-description">ANIMATION [insert explanation here] </p>
+        <div class="vo-player-wrap">
+          <button class="vo-play-btn" aria-label="Play">
+            <span class="play-icon"></span>
+          </button>
+          <div class="vo-waveform">
+            <canvas class="waveform-canvas"></canvas>
+            <div class="waveform-progress"></div>
+          </div>
+          <span class="vo-time">0:00</span>
+        </div>
+        <audio class="vo-audio" preload="none">
           <source src="src/audio/commercial-demo.mp3" type="audio/mpeg"/>
-          Your browser does not support the audio element.
         </audio>
       </div>
 
-      <div class="vo-card">
+      <div class="vo-card" data-audio="src/audio/narration-demo.mp3">
         <div class="vo-card-header">
-          <span class="vo-label">Narration</span>
-          <span class="vo-duration">0:45</span>
+          <span class="vo-label">NARATION</span>
+          <span class="vo-duration" data-total="0:45">0:45</span>
         </div>
         <div class="vo-divider"></div>
-        <p class="vo-description">Warm, authoritative narration for documentary and corporate.</p>
-        <!-- Replace src: src/audio/narration-demo.mp3 -->
-        <audio controls class="vo-player">
+        <p class="vo-description">NARATION [insert explanation here]</p>
+        <div class="vo-player-wrap">
+          <button class="vo-play-btn" aria-label="Play">
+            <span class="play-icon"></span>
+          </button>
+          <div class="vo-waveform">
+            <canvas class="waveform-canvas"></canvas>
+            <div class="waveform-progress"></div>
+          </div>
+          <span class="vo-time">0:00</span>
+        </div>
+        <audio class="vo-audio" preload="none">
           <source src="src/audio/narration-demo.mp3" type="audio/mpeg"/>
-          Your browser does not support the audio element.
         </audio>
       </div>
 
-      <div class="vo-card">
-        <div class="vo-card-header">
-          <span class="vo-label">Character</span>
-          <span class="vo-duration">0:38</span>
-        </div>
-        <div class="vo-divider"></div>
-        <p class="vo-description">Range of distinct character voices for animation and games.</p>
-        <!-- Replace src: src/audio/character-demo.mp3 -->
-        <audio controls class="vo-player">
-          <source src="src/audio/character-demo.mp3" type="audio/mpeg"/>
-          Your browser does not support the audio element.
-        </audio>
-      </div>
-
-      <div class="vo-card">
-        <div class="vo-card-header">
-          <span class="vo-label">Promo</span>
-          <span class="vo-duration">0:28</span>
-        </div>
-        <div class="vo-divider"></div>
-        <p class="vo-description">High-energy reads for trailers and promos.</p>
-        <!-- Replace src: src/audio/promo-demo.mp3 -->
-        <audio controls class="vo-player">
-          <source src="src/audio/promo-demo.mp3" type="audio/mpeg"/>
-          Your browser does not support the audio element.
-        </audio>
-      </div>
-
-    </div><!-- /vo-grid -->
+    </div>
   </div>
-</div>
+</div> -->
 
 <!-- ═══ FOOTER ═══ -->
 <footer id="footer-portal">
@@ -245,29 +236,15 @@
 </footer>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
+ <!-- TO-DO: BROKEN FIX LATER -->
+<!-- <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightbox-close">✕</button>
-  <img src="" alt="" id="lightbox-img"/>
-</div>
+  <img src="#" alt="" id="lightbox-img"/>
+</div> -->
 
-<script src="js/index.js"></script>
+<!-- Scripts at end of body so DOM is ready when they run -->
 <script src="js/gallery.js"></script>
-
-<!-- Scroll reveal observer -->
-<script>
-(function() {
-  const els = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('in-view'), i * 60);
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  els.forEach(el => obs.observe(el));
-})();
-</script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
