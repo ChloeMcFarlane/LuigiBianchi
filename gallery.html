@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Luigi Bianchi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lobster&family=Momo+Signature&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-  </style>
-  <link rel="stylesheet" href="css/style-index.css"/>
+<title>Gallery — Luigi Bianchi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lobster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+</style>
+<link rel="stylesheet" href="css/style-index.css"/>
+<link rel="stylesheet" href="css/gallery.css"/>
 </head>
 <body>
 
@@ -19,78 +20,254 @@
     <li><a href="/index.html">About</a></li>
     <li><a href="src/lbresume.pdf">Resume</a></li>
     <li><a href="/gallery.html">Gallery</a></li>
-    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ═══ PORTAL 4: MUSIC ═══ -->
-<div class="portal" id="music-portal" style="background:#2e5424; border-radius:48px;">
-    <section id="music">
-      <div class="music-ghost">listen</div>
-      <div class="music-inner">
-        <div class="sec-head reveal" style="max-width:none;">
-          <span class="sec-num" style="color:rgba(100,160,60,0.12);">01</span>
-          <h2 class="sec-title" style="color:#9aca7a;">Music</h2>
-        </div>
-        <!-- Replace ARTIST_ID with Luigi's real Spotify artist ID -->
-        <div class="spotify-wrap reveal">
-          <iframe src="https://open.spotify.com/embed/artist/ARTIST_ID?utm_source=generator&theme=0"
-            width="100%" height="380" frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
+<!-- ═══ GALLERY HERO ═══ -->
+<div id="gallery-header-portal">
+  <div class="gallery-header-shape"></div>
+  <div class="gallery-header-shape-2"></div>
+  <div class="gallery-header-inner">
+    <span class="gallery-eyebrow">Portfolio · Work · Life</span>
+    <h1 class="gallery-title">The<br/><em>Gallery</em></h1>
+    <div class="gallery-rule"></div>
+    <p class="gallery-subtitle">Theatre · Film · TV · Dance</p>
   </div>
-  
-  <!-- ═══ PORTAL 5: VOICE ═══ -->
-  <div class="portal" id="voice-portal" style="background:#1a2d14; border-radius:48px;">
-    <section id="voiceover">
-      <div class="orb orb-v"></div>
-      <div class="vo-inner">
-        <div class="sec-head reveal" style="max-width:none;">
-          <span class="sec-num" style="color:rgba(60,100,40,0.1);">02</span>
-          <h2 class="sec-title" style="color:#7aaa56;">Voice</h2>
-        </div>
-        <div class="vo-list">
-          <div class="vo-row reveal">
-            <button class="vo-btn" onclick="toggleVO(this)">▶</button>
-            <div><div class="vo-name">Main Reel — 2024</div><div class="vo-desc">Commercial · Animation · Narration</div></div>
-            <div class="vo-wave" id="vw1"></div>
-            <div class="vo-dur">2:14</div>
-          </div>
-          <div class="vo-row reveal">
-            <button class="vo-btn" onclick="toggleVO(this)">▶</button>
-            <div><div class="vo-name">Character Voices</div><div class="vo-desc">Animation · Gaming</div></div>
-            <div class="vo-wave" id="vw2"></div>
-            <div class="vo-dur">1:48</div>
-          </div>
-          <div class="vo-row reveal">
-            <button class="vo-btn" onclick="toggleVO(this)">▶</button>
-            <div><div class="vo-name">Documentary</div><div class="vo-desc">Narration · Long-form</div></div>
-            <div class="vo-wave" id="vw3"></div>
-            <div class="vo-dur">1:30</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+</div>
 
+<!-- ═══ MASONRY GALLERY ═══ -->
+<div id="gallery-main-portal">
 
-<!-- ═══ PORTAL 7: FOOTER ═══ -->
-<footer id="footer-portal">
-    <div class="footer-inner">
-      <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
-      <ul class="footer-links">
-        <li><a href="#statement">About</a></li>
-        <li><a href="#projects">Resume</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#music">Contact</a></li>
-      </ul>
-      <div class="footer-copy">© 2024 Luigi Bianchi</div>
+  <div class="gallery-controls">
+    <div class="filter-row">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="theatre">Theatre</button>
+      <button class="filter-pill" data-filter="film">Film</button>
+      <button class="filter-pill" data-filter="tv">TV</button>
+      <button class="filter-pill" data-filter="dance">Dance</button>
     </div>
-  </footer>
-  
-  <script src="js/index.js"></script>
-  </body>
-  </html>
+    <span class="gallery-count" id="gallery-count">9 photos</span>
+  </div>
+
+  <div class="masonry-grid" id="gallery-grid">
+
+    <div class="masonry-item reveal" data-cat="theatre">
+      <div class="img-ph h-lg"><span>Photo 01</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">Production Title</div>
+        <div class="img-ov-tag">Theatre · 2024</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="film">
+      <div class="img-ph h-md"><span>Photo 02</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">Film Title</div>
+        <div class="img-ov-tag">Film · 2024</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="dance">
+      <div class="img-ph h-xl"><span>Photo 03</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">Dance Title</div>
+        <div class="img-ov-tag">Dance · 2023</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="theatre">
+      <div class="img-ph h-md"><span>Photo 04</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">Production Title</div>
+        <div class="img-ov-tag">Theatre · 2024</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="tv">
+      <div class="img-ph h-sm"><span>Photo 05</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">TV Title</div>
+        <div class="img-ov-tag">TV · 2023</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="theatre">
+      <div class="img-ph h-lg"><span>Photo 06</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">Production Title</div>
+        <div class="img-ov-tag">Theatre · 2023</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="film">
+      <div class="img-ph h-xl"><span>Photo 07</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">Film Title</div>
+        <div class="img-ov-tag">Film · 2023</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="dance">
+      <div class="img-ph h-md"><span>Photo 08</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">Dance Title</div>
+        <div class="img-ov-tag">Dance · 2024</div>
+      </div>
+    </div>
+
+    <div class="masonry-item reveal" data-cat="tv">
+      <div class="img-ph h-lg"><span>Photo 09</span></div>
+      <div class="img-ov">
+        <div class="img-ov-title">TV Title</div>
+        <div class="img-ov-tag">TV · 2024</div>
+      </div>
+    </div>
+
+  </div><!-- /masonry-grid -->
+</div><!-- /gallery-main-portal -->
+
+<!-- ═══ SPOTIFY — full-width band ═══ -->
+<!--
+  TO ADD LUIGI'S ARTIST LINK:
+  1. Go to his Spotify artist page in a browser
+  2. Copy the URL: https://open.spotify.com/artist/XXXXXXXXXXXXXX
+  3. Replace REPLACE_WITH_ARTIST_ID below with the ID after /artist/
+-->
+<div id="spotify-portal">
+  <div class="spotify-inner">
+    <div class="spotify-text">
+      <span class="section-eyebrow">Listen</span>
+      <h2 class="section-title">On <em>Spotify</em></h2>
+      <p class="spotify-desc">Stream Luigi's work — original recordings,<br/>cast albums, and featured performances.</p>
+    </div>
+    <div class="spotify-embed-wrap">
+      <iframe
+        id="spotify-iframe"
+        src="https://open.spotify.com/embed/artist/REPLACE_WITH_ARTIST_ID?utm_source=generator"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ VOICE OVER PREVIEWS ═══ -->
+<div id="voiceover-portal">
+  <div class="voiceover-inner">
+
+    <div class="vo-header">
+      <div class="vo-header-left">
+        <span class="section-eyebrow">Audio · Demos · Reels</span>
+        <h2 class="section-title">Voice Over <em>Previews</em></h2>
+        <p class="section-subtitle">A selection of demo reels and sample clips<br/>spanning commercial, narration, character, and promo.</p>
+      </div>
+    </div>
+
+    <div class="vo-grid">
+
+      <div class="vo-card">
+        <div class="vo-card-header">
+          <span class="vo-label">Commercial</span>
+          <span class="vo-duration">0:32</span>
+        </div>
+        <div class="vo-divider"></div>
+        <p class="vo-description">Upbeat, conversational tone for brand spots.</p>
+        <!-- Replace src: src/audio/commercial-demo.mp3 -->
+        <audio controls class="vo-player">
+          <source src="src/audio/commercial-demo.mp3" type="audio/mpeg"/>
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="vo-card">
+        <div class="vo-card-header">
+          <span class="vo-label">Narration</span>
+          <span class="vo-duration">0:45</span>
+        </div>
+        <div class="vo-divider"></div>
+        <p class="vo-description">Warm, authoritative narration for documentary and corporate.</p>
+        <!-- Replace src: src/audio/narration-demo.mp3 -->
+        <audio controls class="vo-player">
+          <source src="src/audio/narration-demo.mp3" type="audio/mpeg"/>
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="vo-card">
+        <div class="vo-card-header">
+          <span class="vo-label">Character</span>
+          <span class="vo-duration">0:38</span>
+        </div>
+        <div class="vo-divider"></div>
+        <p class="vo-description">Range of distinct character voices for animation and games.</p>
+        <!-- Replace src: src/audio/character-demo.mp3 -->
+        <audio controls class="vo-player">
+          <source src="src/audio/character-demo.mp3" type="audio/mpeg"/>
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <div class="vo-card">
+        <div class="vo-card-header">
+          <span class="vo-label">Promo</span>
+          <span class="vo-duration">0:28</span>
+        </div>
+        <div class="vo-divider"></div>
+        <p class="vo-description">High-energy reads for trailers and promos.</p>
+        <!-- Replace src: src/audio/promo-demo.mp3 -->
+        <audio controls class="vo-player">
+          <source src="src/audio/promo-demo.mp3" type="audio/mpeg"/>
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+    </div><!-- /vo-grid -->
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="footer-portal">
+  <div class="footer-inner">
+    <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
+    <ul class="footer-links">
+      <li><a href="/index.html">About</a></li>
+      <li><a href="src/lbresume.pdf">Resume</a></li>
+      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2024 Luigi Bianchi</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">✕</button>
+  <img src="" alt="" id="lightbox-img"/>
+</div>
+
+<script src="js/index.js"></script>
+<script src="js/gallery.js"></script>
+
+<!-- Scroll reveal observer -->
+<script>
+(function() {
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in-view'), i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+})();
+</script>
+
+</body>
+</html>

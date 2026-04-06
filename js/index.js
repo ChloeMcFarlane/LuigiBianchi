@@ -18,6 +18,33 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+// SCROLL GALLERY — drag to scroll
+const track = document.getElementById('scroll-gallery-track');
+if (track) {
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => {
+    isDown = true; track.classList.add('dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
+  track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('dragging'); });
+  track.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  }, { passive: true });
+  track.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX - track.offsetLeft;
+    track.scrollLeft = scrollLeft - (x - startX);
+  }, { passive: true });
+}
+
 // GALLERY FILTER
 document.querySelectorAll('.filter-pill').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -29,23 +56,3 @@ document.querySelectorAll('.filter-pill').forEach(btn => {
     });
   });
 });
-
-// WAVEFORMS
-['vw1','vw2','vw3'].forEach(id => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  [8,14,22,18,28,20,30,16,24,12,20,26,10,22,30,14,24,18,12,26].forEach(h => {
-    const s = document.createElement('span');
-    s.style.height = h + 'px';
-    el.appendChild(s);
-  });
-});
-
-// VOICEOVER
-let activeVO = null;
-function toggleVO(btn) {
-  if (activeVO === btn) { btn.textContent = '▶'; activeVO = null; return; }
-  if (activeVO) activeVO.textContent = '▶';
-  btn.textContent = '⏸'; activeVO = btn;
-  // TODO: attach real Audio() when files are provided
-}
