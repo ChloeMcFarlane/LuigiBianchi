@@ -45,14 +45,17 @@ if (track) {
   }, { passive: true });
 }
 
-// GALLERY FILTER
-document.querySelectorAll('.filter-pill').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.masonry-item').forEach(item => {
-      item.style.display = (f === 'all' || item.dataset.cat === f) ? 'block' : 'none';
+// GALLERY FILTER — only run on pages that are NOT the gallery page
+// (gallery.js owns this on gallery.html)
+if (!document.getElementById('gallery-grid')) {
+  document.querySelectorAll('.filter-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.masonry-item').forEach(item => {
+        item.style.display = (f === 'all' || item.dataset.cat === f) ? 'block' : 'none';
+      });
     });
   });
-});
+}
