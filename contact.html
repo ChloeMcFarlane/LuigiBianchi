@@ -13,26 +13,21 @@
 <body>
 
     <!-- ===================== NAV — matches index.html exactly ===================== -->
-    <header>
 <!-- NAV -->
 <nav id="navbar">
     <span class="brand">Luigi Bianchi</span>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="/index.html">About</a></li>
       <li><a href="src/lbresume.pdf">Resume</a></li>
       <li><a href="/gallery.html">Gallery</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
-  </nav>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-        </nav>
-    </header>
+</nav>
 
     <main>
         <div class="contact-wrapper">
@@ -108,15 +103,16 @@
     </main>
 
     <!-- ===================== FOOTER — matches index.html ===================== -->
-    <footer>
-        <div class="footer-wrapper">
-            <ul id="socials-links">
-                <li><a href="https://www.instagram.com/chlo.mcfarlane/" target="_blank">Instagram</a></li>
-                <li><a href="https://www.tiktok.com/@peachyfuckenkeen?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a></li>
-                <li><a href="https://www.imdb.com/name/nm13423305/" target="_blank">IMDB</a></li>
+    <footer id="footer-portal">
+        <div class="footer-inner">
+            <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
+            <ul class="footer-links">
+                <li><a href="/index.html">About</a></li>
+                <li><a href="src/lbresume.pdf">Resume</a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/contact.html">Contact</a></li>
             </ul>
-            <h3 id="footer-message">Chloe McFarlane</h3>
-            <p class="footer-copy">&copy; 2024 Chloe McFarlane. All rights reserved.</p>
+            <div class="footer-copy">© 2024 Luigi Bianchi</div>
         </div>
     </footer>
 
