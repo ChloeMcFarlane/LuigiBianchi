@@ -1,24 +1,24 @@
 /* ═══════════════════════════════════════
-   GALLERY — Dark Green Geometric Edition
+   GALLERY — Shares index.html palette
    ═══════════════════════════════════════ */
 
    :root {
-    --ink:        #0D1A0F;
-    --ink-soft:   #1C2E1E;
-    --forest:     #1F3A22;
-    --moss:       #2D5230;
-    --sage:       #4A7C50;
-    --fern:       #6BA36F;
-    --mist:       #A8C9AB;
-    --cream:      #E8EDE6;
-    --pale:       #F2F5F1;
+    --ink:        #1B1611;
+    --ink-soft:   #2a2118;
+    --forest:     #3F4634;
+    --moss:       #413324;
+    --sage:       #584738;
+    --fern:       #959581;
+    --mist:       #c2c3be;
+    --cream:      #E1E2E3;
+    --pale:       #F0F1EF;
     --gold:       #C8A96E;
     --gold-dim:   #8A7048;
-    --text-main:  #E8EDE6;
-    --text-muted: rgba(168,201,171,0.55);
-    --text-dim:   rgba(168,201,171,0.3);
-    --border:     rgba(74,124,80,0.18);
-    --border-mid: rgba(74,124,80,0.32);
+    --text-main:  #E1E2E3;
+    --text-muted: rgba(225,226,227,0.55);
+    --text-dim:   rgba(149,149,129,0.35);
+    --border:     rgba(149,149,129,0.15);
+    --border-mid: rgba(149,149,129,0.28);
   }
   
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,7 +46,7 @@
     justify-content: space-between !important;
     padding: 0 52px !important;
     height: 64px !important;
-    background: rgba(13,26,15,0.88) !important;
+    background: rgba(27,22,17,0.95) !important;
     backdrop-filter: blur(12px) !important;
     border-bottom: 1px solid var(--border) !important;
     /* Reset anything style-index might add */
@@ -80,7 +80,7 @@
      ══════════════════════════════════════════════ */
   #gallery-header-portal {
     /* 64px = navbar height. Keeps content from hiding under it. */
-    padding: 128px 52px 80px;
+    padding: 80px 52px 56px;
     margin-top: 64px; /* push below fixed navbar — prevents the extra gap */
     background: var(--ink);
     position: relative;
@@ -88,40 +88,7 @@
     border-bottom: 1px solid var(--border);
   }
   
-  /* Geometric background shapes */
-  #gallery-header-portal::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -60px;
-    width: 420px; height: 420px;
-    background: var(--forest);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    opacity: 0.5;
-  }
-  #gallery-header-portal::after {
-    content: '';
-    position: absolute;
-    bottom: -40px; left: 38%;
-    width: 200px; height: 200px;
-    border: 1px solid var(--border-mid);
-    transform: rotate(12deg);
-  }
-  .gallery-header-shape {
-    position: absolute;
-    top: 60px; right: 200px;
-    width: 120px; height: 120px;
-    border: 1px solid var(--border-mid);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  }
-  .gallery-header-shape-2 {
-    position: absolute;
-    bottom: 40px; left: 52px;
-    width: 60px; height: 60px;
-    background: var(--moss);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transform: rotate(15deg);
-    opacity: 0.6;
-  }
+  /* Gallery header — clean, no decorative shapes */
   
   .gallery-header-inner { position: relative; z-index: 1; max-width: 860px; }
   
@@ -137,7 +104,7 @@
   }
   .gallery-title {
     font-family: 'Lobster', serif;
-    font-size: clamp(68px, 10vw, 130px);
+    font-size: clamp(44px, 7vw, 82px);
     line-height: 0.92;
     color: var(--cream);
     letter-spacing: -0.01em;
@@ -172,18 +139,6 @@
     position: relative;
   }
   
-  /* Subtle grid texture */
-  #gallery-main-portal::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--border) 1px, transparent 1px),
-      linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 80px 80px;
-    pointer-events: none;
-    opacity: 0.4;
-  }
   
   .gallery-controls {
     position: relative;
@@ -198,26 +153,25 @@
   .filter-row { display: flex; gap: 6px; flex-wrap: wrap; }
   
   .filter-pill {
-    padding: 7px 18px;
+    padding: 8px 18px;
     border: 1px solid var(--border-mid);
     background: transparent;
     color: var(--text-muted);
-    font-size: 0.62rem;
-    letter-spacing: 0.22em;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     font-family: 'Playfair Display', serif;
     cursor: pointer;
     transition: all 0.22s;
-    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
   }
   .filter-pill:hover {
     border-color: var(--sage);
     color: var(--cream);
-    background: rgba(45,82,48,0.25);
+    background: rgba(63,70,52,0.25);
   }
   .filter-pill.active {
-    background: var(--moss);
-    border-color: var(--moss);
+    background: var(--forest);
+    border-color: var(--forest);
     color: var(--cream);
   }
   
@@ -288,7 +242,7 @@
   
   .tile-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(13,26,15,0.92) 0%, rgba(13,26,15,0.2) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(27,22,17,0.92) 0%, rgba(27,22,17,0.2) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -320,7 +274,7 @@
      ══════════════════════════════════════════════ */
   .gallery-overlay {
     position: fixed; inset: 0;
-    background: rgba(13,26,15,0.97);
+    background: rgba(27,22,17,0.97);
     z-index: 999;
     display: flex;
     align-items: center;
@@ -350,7 +304,7 @@
   .overlay-close:hover {
     color: var(--cream);
     border-color: var(--sage);
-    background: rgba(45,82,48,0.3);
+    background: rgba(63,70,52,0.3);
   }
   
   .overlay-prev,
@@ -372,7 +326,7 @@
   .overlay-next:hover {
     color: var(--cream);
     border-color: var(--sage);
-    background: rgba(45,82,48,0.3);
+    background: rgba(63,70,52,0.3);
   }
   .overlay-prev:disabled,
   .overlay-next:disabled {
@@ -461,7 +415,7 @@
     right: -80px; top: 50%;
     transform: translateY(-50%);
     width: 500px; height: 500px;
-    background: rgba(45,82,48,0.35);
+    background: rgba(63,70,52,0.35);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   }
   #spotify-portal::after {
@@ -638,7 +592,7 @@
     gap: 14px;
     margin-top: 8px;
     padding: 18px 20px;
-    background: rgba(13,26,15,0.5);
+    background: rgba(27,22,17,0.5);
     border: 1px solid var(--border);
     clip-path: polygon(0 0, 97% 0, 100% 20%, 100% 100%, 3% 100%, 0 80%);
   }
@@ -701,7 +655,7 @@
     top: 0; left: 0;
     width: 0%;
     height: 100%;
-    background: rgba(107,163,111,0.15);
+    background: rgba(149,149,129,0.15);
     pointer-events: none;
     transition: width 0.1s linear;
   }
@@ -718,45 +672,45 @@
   .vo-audio { display: none; }
   
   /* ══════════════════════════════════════════════
-     FOOTER
+     FOOTER — matches index.html footer exactly
      ══════════════════════════════════════════════ */
   #footer-portal {
-    background: var(--ink-soft);
-    border-top: 1px solid var(--border-mid);
-    padding: 56px 52px 48px;
+    background: var(--ink);
+    border-top: 1px solid var(--border);
+    padding: 60px 52px 36px;
   }
   .footer-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 32px;
   }
   .footer-name {
     font-family: 'Lobster', serif;
-    font-size: 2rem;
-    line-height: 1;
-    color: var(--cream);
+    font-size: 2.2rem;
+    line-height: 1.1;
+    color: rgba(225,226,227,0.6);
   }
   .footer-name em { color: var(--fern); font-style: italic; }
   .footer-links {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 28px;
   }
   .footer-links a {
-    font-size: 0.62rem;
-    letter-spacing: 0.22em;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--text-dim);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.25s;
   }
   .footer-links a:hover { color: var(--cream); }
   .footer-copy {
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
+    font-size: 0.65rem;
+    color: rgba(225,226,227,0.2);
+    letter-spacing: 0.1em;
   }
   
   /* ══════════════════════════════════════════════
@@ -806,7 +760,7 @@
     #spotify-portal,
     #voiceover-portal,
     #footer-portal { padding-left: 20px; padding-right: 20px; }
-    .gallery-title { font-size: clamp(52px, 15vw, 80px); }
+    .gallery-title { font-size: clamp(36px, 12vw, 60px); }
     #navbar { padding: 0 20px !important; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .overlay-img-ph { width: 90vw; height: 90vw; }

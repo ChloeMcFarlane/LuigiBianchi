@@ -52,7 +52,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
-  background: #0a100a;
+  background: #1B1611;
   /* No padding — portals go edge to edge, overlapping */
 }
 
@@ -115,7 +115,7 @@ body {
   padding-bottom: 100px;
 }
 
-/* ── NAV ── */
+/* ── NAV — matches index.html ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 26px 52px;
@@ -123,32 +123,32 @@ nav {
   transition: all 0.5s;
 }
 nav.solid {
-  background: rgba(21,33,16,0.95);
+  background: rgba(27,22,17,0.95);
   backdrop-filter: blur(14px);
   padding: 16px 52px;
-  border-bottom: 1px solid rgba(106,176,76,0.15);
+  border-bottom: 1px solid rgba(149,149,129,0.15);
 }
 nav.dark {
-  background: rgba(10,16,10,0.95);
+  background: rgba(27,22,17,0.95);
   backdrop-filter: blur(14px);
   padding: 16px 52px;
-  border-bottom: 1px solid rgba(74,128,56,0.2);
+  border-bottom: 1px solid rgba(88,71,56,0.2);
 }
 .brand {
   font-family: 'Lobster', serif;
   font-size: 2rem; font-style: italic;
-  color: #8ac86a; letter-spacing: 0.04em;
+  color: #E1E2E3; letter-spacing: 0.04em;
   transition: color 0.5s;
 }
-nav.dark .brand { color: #6ab04c; }
+nav.dark .brand { color: #959581; }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a {
   font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(140,200,100,0.5); text-decoration: none; transition: color 0.3s;
+  color: rgba(149,149,129,0.5); text-decoration: none; transition: color 0.3s;
 }
-nav.dark .nav-links a { color: rgba(106,176,76,0.5); }
-.nav-links a:hover { color: #c8ddb0; }
-nav.dark .nav-links a:hover { color: #8ac86a; }
+nav.dark .nav-links a { color: rgba(149,149,129,0.5); }
+.nav-links a:hover { color: #E1E2E3; }
+nav.dark .nav-links a:hover { color: #E1E2E3; }
 
 /* Hamburger */
 .nav-toggle {
@@ -164,7 +164,7 @@ nav.dark .nav-links a:hover { color: #8ac86a; }
 .nav-toggle span {
     display: block;
     width: 24px; height: 2px;
-    background-color: #8ac86a;
+    background-color: #E1E2E3;
     transition: all 0.3s ease;
 }
 .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -448,11 +448,11 @@ nav.dark .nav-links a:hover { color: #8ac86a; }
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ── FOOTER ── */
+/* ── FOOTER — matches index.html ── */
 footer#footer-portal {
-  background: #0a100a;
+  background: #1B1611;
   padding: 60px 52px 36px;
-  border-top: 1px solid rgba(106,176,76,0.08);
+  border-top: 1px solid rgba(149,149,129,0.08);
 }
 .footer-inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -461,16 +461,16 @@ footer#footer-portal {
 .footer-name {
   font-family: 'Lobster', serif;
   font-size: 2.2rem; line-height: 1.1;
-  color: rgba(200,221,176,0.6);
+  color: rgba(225,226,227,0.6);
 }
-.footer-name em { color: #6ab04c; font-style: italic; }
+.footer-name em { color: #959581; font-style: italic; }
 .footer-links { display: flex; gap: 28px; list-style: none; }
 .footer-links a {
   font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
-  color: rgba(140,200,100,0.35); text-decoration: none; transition: color 0.25s;
+  color: rgba(149,149,129,0.35); text-decoration: none; transition: color 0.25s;
 }
-.footer-links a:hover { color: #8ac86a; }
-.footer-copy { font-size: 0.65rem; color: rgba(200,221,176,0.2); letter-spacing: 0.1em; }
+.footer-links a:hover { color: #E1E2E3; }
+.footer-copy { font-size: 0.65rem; color: rgba(225,226,227,0.2); letter-spacing: 0.1em; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
@@ -486,7 +486,7 @@ footer#footer-portal {
   .nav-links {
     position: fixed; top: 72px; left: -100%;
     width: 100%; height: 100vh;
-    background: #0a100a;
+    background: #1B1611;
     flex-direction: column; align-items: flex-start;
     padding: 2rem 2rem; gap: 2rem;
     transition: left 0.3s ease; z-index: 1000;
