@@ -1,278 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Gallery — Luigi Bianchi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lobster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-</style>
-<!-- Load gallery CSS FIRST so it isn't overridden by style-index -->
-<link rel="stylesheet" href="css/style-gallery.css"/>
-<link rel="stylesheet" href="css/style-index.css"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — Luigi Bianchi</title>
+
+  <!-- ── Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+
+  <!-- ── Styles ── -->
+  <!-- gallery CSS loads first so its resets take precedence over style-index -->
+  <link rel="stylesheet" href="css/style-gallery.css"/>
+  <link rel="stylesheet" href="css/style-index.css"/>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <span class="brand">Luigi Bianchi</span>
-  <ul class="nav-links">
-    <li><a href="/index.html">About</a></li>
-    <li><a href="src/lbresume.pdf">Resume</a></li>
-    <li><a href="/gallery.html">Gallery</a></li>
-    <li><a href="/contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ═══ GALLERY HERO ═══ -->
-<div id="gallery-header-portal">
-  <div class="gallery-header-inner">
-    <span class="gallery-eyebrow">Portfolio · Work · Life</span>
-    <h1 class="gallery-title">The<br/><em>Gallery</em></h1>
-    <div class="gallery-rule"></div>
-    <p class="gallery-subtitle">Theatre · Film/TV · Music · Modeling · Voiceover</p>
-  </div>
-</div>
-
-<!-- ═══ TILE GALLERY ═══ -->
-<div id="gallery-main-portal">
-
-  <div class="gallery-controls">
-    <div class="filter-row" role="group" aria-label="Filter gallery by category">
-      <button class="filter-pill active" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter-pill" data-filter="theatre" aria-pressed="false">Theatre</button>
-      <button class="filter-pill" data-filter="film-tv" aria-pressed="false">Film/TV</button>
-      <button class="filter-pill" data-filter="music" aria-pressed="false">Music</button>
-      <button class="filter-pill" data-filter="modeling" aria-pressed="false">Modeling</button>
-      <button class="filter-pill" data-filter="voiceover" aria-pressed="false">Voiceover</button>
-    </div>
-    <span class="gallery-count" id="gallery-count">12 photos</span>
-  </div>
-
-  <div class="gallery-grid" id="gallery-grid" role="list">
-
-    <!-- Theatre -->
-    <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Production Title — Theatre 2024">
-      <div class="tile-img"><span>Photo 01</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Production Title</div>
-        <div class="tile-tag">Theatre · 2024</div>
-      </div>
-    </div>
-
-    <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Stage Performance — Theatre 2024">
-      <div class="tile-img"><span>Photo 02</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Stage Performance</div>
-        <div class="tile-tag">Theatre · 2024</div>
-      </div>
-    </div>
-
-    <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="The Show — Theatre 2023">
-      <div class="tile-img"><span>Photo 03</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">The Show</div>
-        <div class="tile-tag">Theatre · 2023</div>
-      </div>
-    </div>
-
-    <!-- Film/TV -->
-    <div class="gallery-item reveal" data-cat="film-tv" role="listitem" tabindex="0" aria-label="Film Title — Film/TV 2024">
-      <div class="tile-img"><span>Photo 04</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Film Title</div>
-        <div class="tile-tag">Film/TV · 2024</div>
-      </div>
-    </div>
-
-    <div class="gallery-item reveal" data-cat="film-tv" role="listitem" tabindex="0" aria-label="TV Episode — Film/TV 2023">
-      <div class="tile-img"><span>Photo 05</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">TV Episode</div>
-        <div class="tile-tag">Film/TV · 2023</div>
-      </div>
-    </div>
-
-    <!-- Music -->
-    <div class="gallery-item reveal" data-cat="music" role="listitem" tabindex="0" aria-label="Concert Performance — Music 2024">
-      <div class="tile-img"><span>Photo 06</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Concert Performance</div>
-        <div class="tile-tag">Music · 2024</div>
-      </div>
-    </div>
-
-    <div class="gallery-item reveal" data-cat="music" role="listitem" tabindex="0" aria-label="Studio Session — Music 2023">
-      <div class="tile-img"><span>Photo 07</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Studio Session</div>
-        <div class="tile-tag">Music · 2023</div>
-      </div>
-    </div>
-
-    <!-- Modeling -->
-    <div class="gallery-item reveal" data-cat="modeling" role="listitem" tabindex="0" aria-label="Editorial Shoot — Modeling 2024">
-      <div class="tile-img"><span>Photo 08</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Editorial Shoot</div>
-        <div class="tile-tag">Modeling · 2024</div>
-      </div>
-    </div>
-
-    <div class="gallery-item reveal" data-cat="modeling" role="listitem" tabindex="0" aria-label="Fashion Campaign — Modeling 2023">
-      <div class="tile-img"><span>Photo 09</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Fashion Campaign</div>
-        <div class="tile-tag">Modeling · 2023</div>
-      </div>
-    </div>
-
-    <!-- Voiceover -->
-    <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Commercial Demo — Voiceover 2024">
-      <div class="tile-img"><span>Photo 10</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Commercial Demo</div>
-        <div class="tile-tag">Voiceover · 2024</div>
-      </div>
-    </div>
-
-    <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Narration Reel — Voiceover 2023">
-      <div class="tile-img"><span>Photo 11</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Narration Reel</div>
-        <div class="tile-tag">Voiceover · 2023</div>
-      </div>
-    </div>
-
-    <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
-      <div class="tile-img"><span>Photo 12</span></div>
-      <div class="tile-overlay">
-        <div class="tile-title">Character Demo</div>
-        <div class="tile-tag">Voiceover · 2024</div>
-      </div>
-    </div>
-
-  </div><!-- /gallery-grid -->
-</div><!-- /gallery-main-portal -->
-
-<!-- ═══ OVERLAY MODAL ═══ -->
-<div id="gallery-overlay" class="gallery-overlay" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
-  <button class="overlay-close" id="overlay-close" aria-label="Close photo viewer">✕</button>
-  <button class="overlay-prev" id="overlay-prev" aria-label="Previous photo">&#8249;</button>
-  <button class="overlay-next" id="overlay-next" aria-label="Next photo">&#8250;</button>
-  <div class="overlay-img-wrap">
-    <div class="overlay-img-ph" id="overlay-img-ph"></div>
-  </div>
-  <div class="overlay-caption" id="overlay-caption">
-    <div class="overlay-caption-title" id="overlay-caption-title"></div>
-    <div class="overlay-caption-tag" id="overlay-caption-tag"></div>
-  </div>
-</div>
-
-<!-- ═══ SPOTIFY — full-width band ═══ -->
-<div id="spotify-portal">
-  <div class="spotify-inner">
-    <div class="spotify-text">
-      <span class="section-eyebrow">Listen</span>
-      <h2 class="section-title">On <em>Spotify</em></h2>
-      <p class="spotify-desc">Stream Luigi's work — original recordings,<br/>cast albums, and featured performances.</p>
-    </div>
-    <div class="spotify-embed-wrap">
-      <iframe
-        id="spotify-iframe"
-        src="https://open.spotify.com/embed/artist/6ulBEqq1XbVLiM6MJOMDgb?utm_source=generator"
-        width="100%"
-        height="352"
-        frameborder="0"
-        allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ VOICE OVER PREVIEWS ═══ -->
- <!-- TO-DO: BROKEN FIX LATER -->
-<!-- <div id="voiceover-portal">
-  <div class="voiceover-inner">
-
-    <div class="vo-header">
-      <div class="vo-header-left">
-        <span class="section-eyebrow">Audio · Demos · Reels</span>
-        <h2 class="section-title">Voice Over <em>Previews</em></h2>
-        <p class="section-subtitle">A selection of demo reels and sample clips<br/>spanning commercial, narration, character, and promo.</p>
-      </div>
-    </div>
-
-    <div class="vo-grid">
-
-      <div class="vo-card" data-audio="src/audio/commercial-demo.mp3">
-        <div class="vo-card-header">
-          <span class="vo-label">ANIMATION</span>
-          <span class="vo-duration" data-total="0:32">0:32</span>
-        </div>
-        <div class="vo-divider"></div>
-        <p class="vo-description">ANIMATION [insert explanation here] </p>
-        <div class="vo-player-wrap">
-          <button class="vo-play-btn" aria-label="Play">
-            <span class="play-icon"></span>
-          </button>
-          <div class="vo-waveform">
-            <canvas class="waveform-canvas"></canvas>
-            <div class="waveform-progress"></div>
-          </div>
-          <span class="vo-time">0:00</span>
-        </div>
-        <audio class="vo-audio" preload="none">
-          <source src="src/audio/commercial-demo.mp3" type="audio/mpeg"/>
-        </audio>
-      </div>
-
-      <div class="vo-card" data-audio="src/audio/narration-demo.mp3">
-        <div class="vo-card-header">
-          <span class="vo-label">NARATION</span>
-          <span class="vo-duration" data-total="0:45">0:45</span>
-        </div>
-        <div class="vo-divider"></div>
-        <p class="vo-description">NARATION [insert explanation here]</p>
-        <div class="vo-player-wrap">
-          <button class="vo-play-btn" aria-label="Play">
-            <span class="play-icon"></span>
-          </button>
-          <div class="vo-waveform">
-            <canvas class="waveform-canvas"></canvas>
-            <div class="waveform-progress"></div>
-          </div>
-          <span class="vo-time">0:00</span>
-        </div>
-        <audio class="vo-audio" preload="none">
-          <source src="src/audio/narration-demo.mp3" type="audio/mpeg"/>
-        </audio>
-      </div>
-
-    </div>
-  </div>
-</div> -->
-
-<!-- ═══ FOOTER ═══ -->
-<footer id="footer-portal">
-  <div class="footer-inner">
-    <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
-    <ul class="footer-links">
+  <!-- ═══════════════════════════════════
+       NAV
+  ════════════════════════════════════ -->
+  <nav id="navbar">
+    <span class="brand">Luigi Bianchi</span>
+    <ul class="nav-links">
       <li><a href="/index.html">About</a></li>
       <li><a href="src/lbresume.pdf">Resume</a></li>
       <li><a href="/gallery.html">Gallery</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
-    <div class="footer-copy">© 2024 Luigi Bianchi</div>
-  </div>
-</footer>
+  </nav>
 
-<!-- Scripts at end of body so DOM is ready when they run -->
-<script src="js/gallery.js"></script>
-<script src="js/index.js"></script>
+  <!-- ═══════════════════════════════════
+       HERO HEADER
+  ════════════════════════════════════ -->
+  <div id="gallery-header-portal">
+    <div class="gallery-header-inner">
+      <span class="gallery-eyebrow">Portfolio · Work · Life</span>
+      <h1 class="gallery-title">The<br/><em>Gallery</em></h1>
+      <div class="gallery-rule"></div>
+      <p class="gallery-subtitle">Theatre · Film/TV · Music · Modeling </p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       TILE GALLERY
+  ════════════════════════════════════ -->
+  <div id="gallery-main-portal">
+
+    <div class="gallery-controls">
+      <div class="filter-row" role="group" aria-label="Filter gallery by category">
+        <button class="filter-pill active" data-filter="all"       aria-pressed="true">All</button>
+        <button class="filter-pill"        data-filter="theatre"   aria-pressed="false">Theatre</button>
+        <button class="filter-pill"        data-filter="film-tv"   aria-pressed="false">Film/TV</button>
+        <button class="filter-pill"        data-filter="modeling"  aria-pressed="false">Modeling</button>
+      </div>
+      <span class="gallery-count" id="gallery-count">12 photos</span>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid" role="list">
+
+      <!-- ── Theatre ── -->
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Production Title — Theatre 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod1.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Production Title</div>
+          <div class="tile-tag">Theatre · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Stage Performance — Theatre 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod2.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Stage Performance</div>
+          <div class="tile-tag">Theatre · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Production Title — Theatre 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod3.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Production Title</div>
+          <div class="tile-tag">Theatre · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Stage Performance — Theatre 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod4.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Stage Performance</div>
+          <div class="tile-tag">Theatre · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Stage Performance — Theatre 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod5.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Stage Performance</div>
+          <div class="tile-tag">Theatre · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Production Title — Theatre 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod6.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Production Title</div>
+          <div class="tile-tag">Theatre · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="Stage Performance — Theatre 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod7.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Stage Performance</div>
+          <div class="tile-tag">Theatre · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="theatre" role="listitem" tabindex="0" aria-label="The Show — Theatre 2023">
+        <div class="tile-img">
+          <img src="src/lb-prod8.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">The Show</div>
+          <div class="tile-tag">Theatre · 2023</div>
+        </div>
+      </div>
+
+      <!-- ── Film / TV ── -->
+      <div class="gallery-item reveal" data-cat="film-tv" role="listitem" tabindex="0" aria-label="Film Title — Film/TV 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod9.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Film Title</div>
+          <div class="tile-tag">Film/TV · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="film-tv" role="listitem" tabindex="0" aria-label="TV Episode — Film/TV 2023">
+        <div class="tile-img">
+          <img src="src/lb-prod10.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">TV Episode</div>
+          <div class="tile-tag">Film/TV · 2023</div>
+        </div>
+      </div>
+
+      <!-- ── Music ── -->
+      <div class="gallery-item reveal" data-cat="music" role="listitem" tabindex="0" aria-label="Concert Performance — Music 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod11.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Concert Performance</div>
+          <div class="tile-tag">Music · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="music" role="listitem" tabindex="0" aria-label="Studio Session — Music 2023">
+        <div class="tile-img">
+          <img src="src/lb-prod5.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Studio Session</div>
+          <div class="tile-tag">Music · 2023</div>
+        </div>
+      </div>
+
+      <!-- ── Modeling ── -->
+      <div class="gallery-item reveal" data-cat="modeling" role="listitem" tabindex="0" aria-label="Editorial Shoot — Modeling 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod12.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Editorial Shoot</div>
+          <div class="tile-tag">Modeling · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="modeling" role="listitem" tabindex="0" aria-label="Fashion Campaign — Modeling 2023">
+        <div class="tile-img">
+          <img src="src/lb-prod13.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Fashion Campaign</div>
+          <div class="tile-tag">Modeling · 2023</div>
+        </div>
+      </div>
+
+      <!-- ── Voiceover ── -->
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Commercial Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lb-prod14.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Commercial Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Narration Reel — Voiceover 2023">
+        <div class="tile-img">
+          <img src="src/lb-prod15.jpeg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Narration Reel</div>
+          <div class="tile-tag">Voiceover · 2023</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lbdigi1.jpg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Character Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lbdigi2.jpg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Character Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lbdigi3.jpg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Character Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lbdigi4.jpg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Character Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lbdigi5.jpg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Character Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lbdigi6.jpg" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Character Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-cat="voiceover" role="listitem" tabindex="0" aria-label="Character Demo — Voiceover 2024">
+        <div class="tile-img">
+          <img src="src/lbdigi7.png" alt="Luigi Gallery Image"/>
+        </div>
+        <div class="tile-overlay">
+          <div class="tile-title">Character Demo</div>
+          <div class="tile-tag">Voiceover · 2024</div>
+        </div>
+      </div>
+
+    </div><!-- /gallery-grid -->
+  </div><!-- /gallery-main-portal -->
+
+  <!-- ═══════════════════════════════════
+       OVERLAY MODAL
+  ════════════════════════════════════ -->
+  <div id="gallery-overlay" class="gallery-overlay" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="overlay-close" id="overlay-close" aria-label="Close photo viewer">✕</button>
+    <button class="overlay-prev"  id="overlay-prev"  aria-label="Previous photo">&#8249;</button>
+    <button class="overlay-next"  id="overlay-next"  aria-label="Next photo">&#8250;</button>
+    <div class="overlay-img-wrap">
+      <div class="overlay-img-ph" id="overlay-img-ph"></div>
+    </div>
+    <div class="overlay-caption" id="overlay-caption">
+      <div class="overlay-caption-title" id="overlay-caption-title"></div>
+      <div class="overlay-caption-tag"   id="overlay-caption-tag"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       SPOTIFY
+  ════════════════════════════════════ -->
+  <div id="spotify-portal">
+    <div class="spotify-inner">
+      <div class="spotify-text">
+        <span class="section-eyebrow">Listen</span>
+        <h2 class="section-title">On <em>Spotify</em></h2>
+        <p class="spotify-desc">Stream Luigi's work — original recordings,<br/>cast albums, and featured performances.</p>
+      </div>
+        <iframe
+          id="spotify-iframe"
+          src="https://open.spotify.com/embed/artist/6ulBEqq1XbVLiM6MJOMDgb?utm_source=generator"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       VOICE OVER PREVIEWS (disabled — fix later)
+  ════════════════════════════════════ -->
+  <!--
+  <div id="voiceover-portal"> ... </div>
+  -->
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer id="footer-portal">
+    <div class="footer-inner">
+      <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
+      <ul class="footer-links">
+        <li><a href="/index.html">About</a></li>
+        <li><a href="src/lbresume.pdf">Resume</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">© 2024 Luigi Bianchi</div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════
+       SCRIPTS (end of body — DOM ready)
+  ════════════════════════════════════ -->
+  <script src="js/gallery.js"></script>
+  <script src="js/index.js"></script>
 
 </body>
 </html>
