@@ -471,6 +471,128 @@ footer#footer-portal {
 .footer-links a:hover { color: #E1E2E3; }
 .footer-copy { font-size: 0.65rem; color: rgba(225,226,227,0.2); letter-spacing: 0.1em; }
 
+/* ── 1. Scroll gallery hint — more legible ── */
+.scroll-gallery-hint {
+  /* Override the existing rgba(149,149,129,0.3) — bump opacity significantly */
+  color: rgba(149, 149, 129, 0.72) !important;
+}
+
+
+/* ── 2. Contact CTA Portal ── */
+#contact-cta-portal {
+  background:    #3F4E40;
+  clip-path:     polygon(60px 0, 100% 0, 100% 100%, 0 100%, 0 60px);
+  margin-bottom: -48px;
+  padding:       100px 52px 120px;
+  position:      relative;
+  overflow:      hidden;
+  z-index: 5;
+}
+
+/* Decorative geo shape */
+#contact-cta-portal::before {
+  content:   '';
+  position:  absolute;
+  right:     -60px;
+  top:       50%;
+  transform: translateY(-50%) rotate(15deg);
+  width:     280px;
+  height:    280px;
+  border:    1px solid rgba(149, 149, 129, 0.12);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+#contact-cta-portal::after {
+  content:  '';
+  position: absolute;
+  left:     52px;
+  bottom:   40px;
+  width:    60px;
+  height:   60px;
+  border:   1px solid rgba(149, 149, 129, 0.15);
+  transform: rotate(8deg);
+}
+
+.contact-cta-inner {
+  position:    relative;
+  z-index:     1;
+  display:     flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:         48px;
+  flex-wrap:   wrap;
+}
+
+.contact-cta-text {}
+
+.contact-cta-eyebrow {
+  display:        block;
+  font-size:      0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color:          rgba(149, 149, 129, 0.55);
+  margin-bottom:  14px;
+}
+
+.contact-cta-heading {
+  font-family:    'Lobster', serif;
+  font-size:      clamp(36px, 5vw, 62px);
+  line-height:    1.05;
+  color:          #E1E2E3;
+  letter-spacing: -0.01em;
+}
+.contact-cta-heading em {
+  color:      #959581;
+  font-style: italic;
+}
+
+.contact-cta-sub {
+  font-size:   0.9rem;
+  font-style:  italic;
+  color:       rgba(225, 226, 227, 0.5);
+  margin-top:  14px;
+  line-height: 1.7;
+  max-width:   380px;
+}
+
+.contact-cta-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             14px;
+  padding:         20px 36px;
+  background:      transparent;
+  border:          1px solid rgba(149, 149, 129, 0.4);
+  color:           #E1E2E3;
+  font-size:       0.72rem;
+  font-style:      italic;
+  letter-spacing:  0.22em;
+  text-transform:  uppercase;
+  text-decoration: none;
+  clip-path:       polygon(0 0, 94% 0, 100% 18%, 100% 100%, 6% 100%, 0 82%);
+  transition:      background 0.3s, border-color 0.3s, color 0.3s;
+  flex-shrink:     0;
+}
+.contact-cta-btn:hover {
+  background:   rgba(63, 70, 52, 0.5);
+  border-color: #959581;
+  color:        #E1E2E3;
+}
+.contact-cta-btn .btn-arrow {
+  font-style:  normal;
+  font-size:   1.1rem;
+  transition:  transform 0.25s;
+}
+.contact-cta-btn:hover .btn-arrow { transform: translateX(5px); }
+
+/* Responsive */
+@media (max-width: 680px) {
+  #contact-cta-portal {
+    padding:     60px 24px 80px;
+    clip-path:   none;
+    margin-bottom: 0;
+  }
+  .contact-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .masonry-grid { columns: 2; }

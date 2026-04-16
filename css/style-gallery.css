@@ -29,7 +29,7 @@
 
 /* ── Font Helpers ────────────────────────────────────── */
 /* Accent  */ .font-accent  { font-family: "Lobster", sans-serif; font-weight: 400; font-style: normal; }
-/* Main    */ .font-main    { font-family: "Playfair Display", serif; font-optical-sizing: auto; font-weight: 400; font-style: normal; }
+ /* .font-main    { font-family: "Playfair Display", serif; font-optical-sizing: auto; font-weight: 400; font-style: normal; } */
 
 
 /* ═══════════════════════════════════════════════════════
@@ -40,7 +40,6 @@
 body {
   background:  var(--ink)       !important;
   color:       var(--text-main) !important;
-  font-family: "Playfair Display", Georgia, serif !important;
   min-height:  100vh;
   margin: 0   !important;
   padding: 0  !important;
@@ -81,7 +80,7 @@ body {
   gap:        36px;
 }
 .nav-links a {
-  font-family:     "Playfair Display", serif; /* main */
+
   font-size:       0.65rem;
   letter-spacing:  0.25em;
   text-transform:  uppercase;
@@ -234,7 +233,6 @@ body {
   align-items:     center;
   justify-content: center;
   color:           var(--text-dim);
-  font-family:     "Playfair Display", serif; /* main */
   font-size:       0.58rem;
   letter-spacing:  0.2em;
   text-transform:  uppercase;
@@ -279,14 +277,12 @@ body {
 .gallery-item:focus .tile-overlay { opacity: 1; }
 
 .tile-title {
-  font-family: "Playfair Display", serif; /* main */
   font-size:   0.88rem;
   font-style:  italic;
   color:       var(--cream);
   line-height: 1.2;
 }
 .tile-tag {
-  font-family:    "Playfair Display", serif; /* main */
   font-size:      0.56rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -395,7 +391,6 @@ body {
   align-items:     center;
   justify-content: center;
   color:           var(--text-dim);
-  font-family:     "Playfair Display", serif; /* main */
   font-size:       0.65rem;
   letter-spacing:  0.2em;
   text-transform:  uppercase;
@@ -423,14 +418,12 @@ body {
   white-space:    nowrap;
 }
 .overlay-caption-title {
-  font-family: "Playfair Display", serif; /* main */
   font-style:  italic;
   font-size:   1.05rem;
   color:       var(--cream);
   line-height: 1.3;
 }
 .overlay-caption-tag {
-  font-family:    "Playfair Display", serif; /* main */
   font-size:      0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -483,7 +476,6 @@ body {
 }
 
 .section-eyebrow {
-  font-family:    "Playfair Display", serif; /* main */
   font-size:      0.62rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -500,7 +492,6 @@ body {
 .section-title em { color: var(--fern); font-style: italic; }
 
 .spotify-desc {
-  font-family: "Playfair Display", serif; /* main */
   font-size:   0.88rem;
   font-style:  italic;
   color:       var(--text-muted);
@@ -704,7 +695,6 @@ body {
 
 .footer-links { list-style: none; display: flex; gap: 28px; }
 .footer-links a {
-  font-family:     "Playfair Display", serif; /* main */
   font-size:       0.68rem;
   letter-spacing:  0.15em;
   text-transform:  uppercase;
@@ -715,7 +705,6 @@ body {
 .footer-links a:hover { color: var(--cream); }
 
 .footer-copy {
-  font-family:    "Playfair Display", serif; /* main */
   font-size:      0.65rem;
   letter-spacing: 0.1em;
   color:          rgba(225, 226, 227, 0.2);
