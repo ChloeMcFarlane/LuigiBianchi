@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* ── Variables ────────────────────────────────────────── */
 :root {
@@ -28,6 +28,7 @@ body {
   background:  var(--ink);
   color:       var(--text-main);
   overflow-x:  hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* ── NAV ──────────────────────────────────────────────── */
@@ -226,7 +227,6 @@ textarea {
   background:  rgba(63, 70, 52, 0.15);
   border:      1px solid var(--border-mid);
   color:       var(--cream);
-  font-family: 'Playfair Display', serif;
   font-size:   0.9rem;
   font-style:  italic;
   padding:     14px 16px;
@@ -257,7 +257,6 @@ textarea { resize: vertical; min-height: 140px; }
   background:      var(--forest);
   border:          1px solid var(--forest);
   color:           var(--cream);
-  font-family:     'Playfair Display', serif;
   font-size:       0.75rem;
   font-style:      italic;
   letter-spacing:  0.2em;

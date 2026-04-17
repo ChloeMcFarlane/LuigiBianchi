@@ -223,7 +223,7 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
 }
 .hero-name em { color: #E1E2E3; font-style: italic; }
 .hero-sub {
-  font-size: 1rem; color: rgba(225,226,227,0.55);
+  font-size: 1.25rem; color: rgba(225,226,227,0.55);
   margin-top: 20px; max-width: 380px; line-height: 1.7;
 }
 .hero-right { flex: 0 0 auto; }
@@ -284,6 +284,15 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
 .statement-text strong { color: #E1E2E3; font-style: normal; }
 
 /* ── SCROLL GALLERY ── */
+/* Fix zoomed images in scroll gallery */
+.scroll-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
 #scroll-gallery {
   position: relative; z-index: 1;
   padding: 60px 0 60px 52px;
@@ -466,7 +475,7 @@ footer#footer-portal {
 .footer-links { display: flex; gap: 28px; list-style: none; }
 .footer-links a {
   font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
-  color: rgba(149,149,129,0.35); text-decoration: none; transition: color 0.25s;
+  color: rgba(149, 149, 129, 0.662); text-decoration: none; transition: color 0.25s;
 }
 .footer-links a:hover { color: #E1E2E3; }
 .footer-copy { font-size: 0.65rem; color: rgba(225,226,227,0.2); letter-spacing: 0.1em; }
@@ -476,7 +485,35 @@ footer#footer-portal {
   /* Override the existing rgba(149,149,129,0.3) — bump opacity significantly */
   color: rgba(149, 149, 129, 0.72) !important;
 }
+/* GALLERY CTA */
 
+.gallery-cta-btn {
+  margin: auto;
+  gap: 14px;
+  padding: 20px 36px;
+  background: transparent;
+  border: 1px solid rgba(149,149,129,0.4);
+  color: #E1E2E3;
+  font-size: 0.72rem; 
+  font-style: italic; 
+  letter-spacing: 0.22em; 
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 94% 0, 100% 18%, 100% 100%, 6% 100%, 0 82%);
+}
+
+.gallery-cta-btn .btn-text{
+  color: #E1E2E3;
+  transition: color 0.3s;
+}
+
+#scroll-gallery-portal a {
+  margin-left: 15%;
+  margin-right: 15%;
+  text-decoration: none;
+  display:  block; 
+  justify-content: space-around;
+  text-align: center; 
+}
 
 /* ── 2. Contact CTA Portal ── */
 #contact-cta-portal {
@@ -517,7 +554,7 @@ footer#footer-portal {
   z-index:     1;
   display:     flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap:         48px;
   flex-wrap:   wrap;
 }
@@ -546,7 +583,7 @@ footer#footer-portal {
 }
 
 .contact-cta-sub {
-  font-size:   0.9rem;
+  font-size:   1.25rem;
   font-style:  italic;
   color:       rgba(225, 226, 227, 0.5);
   margin-top:  14px;

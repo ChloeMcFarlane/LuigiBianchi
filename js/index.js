@@ -18,33 +18,69 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// SCROLL GALLERY — drag to scroll
+// SCROLL GALLERY — smooth drag to scroll with momentum
 const track = document.getElementById('scroll-gallery-track');
 if (track) {
   let isDown = false, startX, scrollLeft;
+  let velX = 0, lastX = 0, rafId = null;
+
+  function applyMomentum() {
+    velX *= 0.92; // friction
+    track.scrollLeft += velX;
+    if (Math.abs(velX) > 0.5) {
+      rafId = requestAnimationFrame(applyMomentum);
+    }
+  }
+
   track.addEventListener('mousedown', e => {
-    isDown = true; track.classList.add('dragging');
+    isDown = true;
+    track.classList.add('dragging');
     startX = e.pageX - track.offsetLeft;
     scrollLeft = track.scrollLeft;
+    lastX = e.pageX;
+    velX = 0;
+    cancelAnimationFrame(rafId);
   });
-  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('dragging'); });
-  track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('dragging'); });
+
+  track.addEventListener('mouseleave', () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('dragging');
+    requestAnimationFrame(applyMomentum);
+  });
+
+  track.addEventListener('mouseup', () => {
+    isDown = false;
+    track.classList.remove('dragging');
+    requestAnimationFrame(applyMomentum);
+  });
+
   track.addEventListener('mousemove', e => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - track.offsetLeft;
-    track.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    velX = lastX - e.pageX;       // track velocity
+    lastX = e.pageX;
+    track.scrollLeft = scrollLeft + (startX - x);
   });
+
+  // Touch — native scroll handles this well, just let it ride
   track.addEventListener('touchstart', e => {
-    startX = e.touches[0].pageX - track.offsetLeft;
+    startX = e.touches[0].pageX;
     scrollLeft = track.scrollLeft;
+    velX = 0;
+    cancelAnimationFrame(rafId);
   }, { passive: true });
+
   track.addEventListener('touchmove', e => {
-    const x = e.touches[0].pageX - track.offsetLeft;
-    track.scrollLeft = scrollLeft - (x - startX);
+    const x = e.touches[0].pageX;
+    track.scrollLeft = scrollLeft + (startX - x);
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    // let CSS scroll-snap handle the settle
   }, { passive: true });
 }
-
 // GALLERY FILTER — only run on pages that are NOT the gallery page
 // (gallery.js owns this on gallery.html)
 if (!document.getElementById('gallery-grid')) {
