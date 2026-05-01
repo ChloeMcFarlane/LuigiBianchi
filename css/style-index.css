@@ -209,14 +209,17 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
   display: flex; align-items: center; justify-content: space-between;
   width: 100%; gap: 16px;
 }
-.hero-left { flex: 1; }
+.hero-left { 
+  flex: 1; 
+  padding-left: 10%;
+}
 .hero-eyebrow {
   font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
   color: #959581; margin-bottom: 16px;
 }
 .hero-name {
   font-family: 'Lobster', serif;
-  font-size: clamp(64px, 8vw, 120px);
+  font-size: clamp(90px, 8vw, 140px);
   line-height: 1.0;
   color: #E1E2E3;
   letter-spacing: -0.01em;
@@ -226,10 +229,15 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
   font-size: 1.25rem; color: rgba(225,226,227,0.55);
   margin-top: 20px; max-width: 380px; line-height: 1.7;
 }
-.hero-right { flex: 0 0 auto; }
+strong{ font-weight: 550; color: #959581; font-style: normal; }
+
+.hero-right { 
+  flex: 0 0 auto; 
+  margin-right: 15%;
+}
 .headshot-link { position: relative; display: block; }
 .hero-headshot {
-  width: clamp(240px, 28vw, 380px);
+  width: clamp(340px, 28vw, 380px);
   /* Geometric clip instead of circle */
   clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
   display: block;
@@ -261,10 +269,18 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
 }
 .statement-grid.visible { opacity: 1; transform: none; }
 .sidebar-label {
-  writing-mode: vertical-rl; text-orientation: mixed;
+   text-orientation: mixed;
   transform: rotate(180deg);
   font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
   color: rgba(149,149,129,0.45);
+}
+.sidebar-label-artist-statement{
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(149,149,129,0.45);
+
 }
 .as-img-wrap { display: block; }
 .artist-statement-img {
@@ -274,14 +290,15 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
 }
 .statement-text {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(18px, 2vw, 26px);
+  font-size: 1rem;
   line-height: 1.75;
   color: rgba(225,226,227,0.8);
   font-style: italic;
   border-left: 2px solid #3F4634;
   padding-left: 32px;
 }
-.statement-text strong { color: #E1E2E3; font-style: normal; }
+
+.statement-text strong{ font-weight: 550; color: #959581; font-style: normal; }
 
 /* ── SCROLL GALLERY ── */
 /* Fix zoomed images in scroll gallery */
@@ -311,14 +328,11 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  cursor: grab;
   padding-right: 52px;
   padding-bottom: 4px;
 }
 .scroll-gallery-track::-webkit-scrollbar { display: none; }
-.scroll-gallery-track.dragging { cursor: grabbing; }
 
 .scroll-gallery-item {
   flex: 0 0 auto;
@@ -332,6 +346,28 @@ nav.dark .nav-links a:hover { color: #E1E2E3; }
   overflow: hidden;
   transition: border-color 0.3s;
   /* Sharp — no border-radius */
+}
+/* Target the specific item in your scroll track */
+.scroll-gallery-item.sg-wide a {
+  display: block;   
+  width: 100%;
+  height: 100%;
+  overflow: hidden;  
+}
+
+/* Style the thumbnail image itself */
+#thumbnail {
+  width: 100%;
+  height: 100%;
+  display: block;    
+  object-fit: cover; 
+  object-position: center; 
+  transition: transform 0.6s ease; 
+}
+
+/* Optional: Add a hover effect to make the CTA feel interactive */
+.scroll-gallery-item.sg-wide a:hover #thumbnail {
+  transform: scale(1.08); /* Slight zoom on hover */
 }
 .scroll-gallery-item:hover { border-color: rgba(149,149,129,0.35); }
 
@@ -549,8 +585,6 @@ footer#footer-portal {
 }
 
 #scroll-gallery-portal a {
-  margin-left: 15%;
-  margin-right: 15%;
   text-decoration: none;
   display:  block; 
   justify-content: space-around;
