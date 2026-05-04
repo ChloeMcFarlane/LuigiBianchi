@@ -15,12 +15,21 @@
 <!-- NAV -->
 <nav id="navbar">
   <span class="brand">Luigi Bianchi</span>
-  <ul class="nav-links">
+
+  <!-- Desktop links -->
+  <ul class="nav-links" id="nav-menu">
     <li><a href="/index.html">About</a></li>
     <li><a href="src/lbresume.pdf">Resume</a></li>
     <li><a href="/gallery.html">Gallery</a></li>
     <li><a href="/contact.html">Contact</a></li>
   </ul>
+
+  <!-- Hamburger button (hidden on desktop via CSS) -->
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
 <!-- ═══ PORTAL 0: HERO ═══ -->
@@ -34,7 +43,7 @@
       <div class="hero-left">
         <p class="hero-eyebrow">Actor · Creator · Music</p>
         <h1 class="hero-name">Luigi<br/><em>Bianchi</em></h1>
-        <p class="hero-sub">Art powered by <strong> espresso</strong>. Soul soaked in <strong>sazón</strong>.</p>
+        <p class="hero-sub">Art powered by <strong>espresso</strong>. Soul soaked in <strong>sazón</strong>.</p>
         <a href="#"></a>
       </div>
       <div class="hero-right">
@@ -52,24 +61,17 @@
   <section id="statement">
     <div class="orb orb-s"></div>
     <div class="statement-grid reveal">
-
-      <!-- col 1: vertical sidebar label -->
       <div><span class="sidebar-label-artist-statement">Artist Statement</span></div>
-
-      <!-- col 2: headshot image styled like the hero -->
       <div class="as-left">
-          <img src="src/mspic.jpeg" alt="Luigi Bianchi" class="artist-statement-img" />
+        <img src="src/mspic.jpeg" alt="Luigi Bianchi" class="artist-statement-img" />
       </div>
-
-      <!-- col 3: the quote -->
       <blockquote class="statement-text">
-        I am an actor who asks <strong>questions</strong>. I seek truth in my work and meaning in the stories I tell. As a Puerto Rican, Dominican, and Italian artist, culture is not something I reference—it’s <strong>something I carry</strong>. It shapes how I speak, how I see the world, and how I approach every character. I am drawn to stories that challenge me personally and challenge the narratives around my communities, especially in how they reveal our complexity, beauty, and humanity. </br></br>
+        I am an actor who asks <strong>questions</strong>. I seek truth in my work and meaning in the stories I tell. As a Puerto Rican, Dominican, and Italian artist, culture is not something I reference—it's <strong>something I carry</strong>. It shapes how I speak, how I see the world, and how I approach every character. I am drawn to stories that challenge me personally and challenge the narratives around my communities, especially in how they reveal our complexity, beauty, and humanity. </br></br>
 
         I am based between <strong>Boston and New York</strong>, with plans to expand toward <strong>Los Angeles</strong> in the future. Performance, for me, is a process of learning. Watching a character move through struggle, contradiction, and transformation teaches me something about myself each time. More importantly, I hope that work can reflect something back to <strong>young men of color</strong> who are still searching for that same sense of light and possibility.</br></br>
 
-        After training at Boston University and Boston Arts Academy, I can say I’ve been in this work most of my life—but I also know I am still at the beginning. That ongoing process of discovery is what excites me most. Outside of acting, I can be found rock climbing, training in the gym, making music, thrifting and building fits, and finding good food wherever I can.</br></br>
+        After training at Boston University and Boston Arts Academy, I can say I've been in this work most of my life—but I also know I am still at the beginning. That ongoing process of discovery is what excites me most. Outside of acting, I can be found rock climbing, training in the gym, making music, thrifting and building fits, and finding good food wherever I can.</br></br>
       </blockquote>
-
     </div>
   </section>
 </div>
@@ -91,7 +93,7 @@
         <img src="src/lb-prod11.jpeg" alt="Luigi Bianchi Production Image">
       </div>
       <div class="scroll-gallery-item sg-wide">
-        <a href="/gallery.html"><img id="thumbnail" src="src/thumbnail.png" alt="Luigi Bianchi  Image"></a>
+        <a href="/gallery.html"><img id="thumbnail" src="src/thumbnail.png" alt="Luigi Bianchi Image"></a>
       </div>
       <div class="scroll-gallery-item sg-sq">
         <img src="src/lb-prod14.jpeg" alt="Luigi Bianchi Production Image">
@@ -103,30 +105,28 @@
     <div class="scroll-gallery-hint">← drag to explore →</div>
   </section>
 
-
   <a href="/gallery.html" class="gallery-cta-btn">
     <span class="btn-text">Explore Gallery</span>
     <span class="btn-arrow">→</span>
   </a>
 </div>
 
-  <!-- ═══ PORTAL 2 : CONTACT CTA ═══ -->
-
-  <div class="portal" id="contact-cta-portal">
-    <div class="contact-cta-inner reveal">
-      <div class="contact-cta-text">
-        <span class="contact-cta-eyebrow">Work Together</span>
-        <h2 class="contact-cta-heading">Let's<br/><em>Connect</em></h2>
-        <p class="contact-cta-sub">For casting, collaborations, or general inquiries — reach out directly.</p>
-      </div>
-      <a href="/contact.html" class="contact-cta-btn">
-        <span>Hit me up!</span>
-        <span class="btn-arrow">→</span>
-      </a>
+<!-- ═══ PORTAL 2: CONTACT CTA ═══ -->
+<div class="portal" id="contact-cta-portal">
+  <div class="contact-cta-inner reveal">
+    <div class="contact-cta-text">
+      <span class="contact-cta-eyebrow">Work Together</span>
+      <h2 class="contact-cta-heading">Let's<br/><em>Connect</em></h2>
+      <p class="contact-cta-sub">For casting, collaborations, or general inquiries — reach out directly.</p>
     </div>
+    <a href="/contact.html" class="contact-cta-btn">
+      <span>Hit me up!</span>
+      <span class="btn-arrow">→</span>
+    </a>
   </div>
+</div>
 
-  <!-- ═══ PORTAL 1.25: MUSIC ═══ -->
+<!-- ═══ PORTAL 1.25: MUSIC ═══ -->
 <div class="portal" id="music-portal">
   <div class="music-inner">
     <div class="music-text">
@@ -146,7 +146,6 @@
   </div>
 </div>
 
-
 <!-- ═══ PORTAL 7: FOOTER ═══ -->
 <footer id="footer-portal">
   <div class="footer-inner">
@@ -154,13 +153,14 @@
     <ul class="footer-links">
       <li><a href="https://resumes.actorsaccess.com/luigibianchi">Actor's Access</a></li>
       <li><a href="https://www.backstage.com/tal/luigi-bianchi/">Backstage</a></li>
-      <li><a href="https://www.instagram.com/ctm.luigi/"">Instagram</a></li>
-      <li><a href="https://app.castingnetworks.com/talent/profile/250967826">Casting networks</a></li>
+      <li><a href="https://www.instagram.com/ctm.luigi/">Instagram</a></li>
+      <li><a href="https://app.castingnetworks.com/talent/profile/250967826">Casting Networks</a></li>
     </ul>
     <div class="footer-copy">© 2024 Luigi Bianchi</div>
   </div>
 </footer>
 
+<script src="js/nav.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

@@ -5,53 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery — Luigi Bianchi</title>
 
-  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
 
-  <!-- ── Styles ── -->
-  <!-- gallery CSS loads first so its resets take precedence over style-index -->
   <link rel="stylesheet" href="css/style-gallery.css"/>
   <link rel="stylesheet" href="css/style-index.css"/>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════
-       NAV
-  ════════════════════════════════════ -->
+  <!-- NAV -->
   <nav id="navbar">
     <span class="brand">Luigi Bianchi</span>
-    <ul class="nav-links">
+
+    <ul class="nav-links" id="nav-menu">
       <li><a href="/index.html">About</a></li>
       <li><a href="src/lbresume.pdf">Resume</a></li>
       <li><a href="/gallery.html">Gallery</a></li>
       <li><a href="/contact.html">Contact</a></li>
     </ul>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <!-- ═══════════════════════════════════
-       HERO HEADER
-  ════════════════════════════════════ -->
+  <!-- HERO HEADER -->
   <div id="gallery-header-portal">
     <div class="gallery-header-inner">
       <h1 class="gallery-title">The<br/><em>Gallery</em></h1>
       <div class="gallery-rule"></div>
-      <p class="gallery-subtitle">Theatre · Film/TV · Music · Modeling </p>
+      <p class="gallery-subtitle">Theatre · Film/TV · Music · Modeling</p>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════
-       TILE GALLERY
-  ════════════════════════════════════ -->
+  <!-- TILE GALLERY -->
   <div id="gallery-main-portal">
 
     <div class="gallery-controls">
       <div class="filter-row" role="group" aria-label="Filter gallery by category">
         <button class="filter-pill active" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-pill" data-filter="theatre"aria-pressed="false">Theatre</button>
+        <button class="filter-pill" data-filter="theatre" aria-pressed="false">Theatre</button>
         <button class="filter-pill" data-filter="video">Video Reels</button>
-        <button class="filter-pill" data-filter="headshot"  aria-pressed="false">Headshot</button>
+        <button class="filter-pill" data-filter="headshot" aria-pressed="false">Headshot</button>
       </div>
       <span class="gallery-count" id="gallery-count">12 photos</span>
     </div>
@@ -63,21 +61,15 @@
           <h2 class="section-title">The <em>Reels</em></h2>
           <div class="gallery-rule"></div>
         </header>
-    
-        <!-- The JS will dump the reels here -->
         <div id="reels-grid" class="reels-grid"></div>
       </div>
     </section>
 
-    <div class="gallery-grid" id="gallery-grid" role="list">
-      <!-- This is now empty! JavaScript will fill it with your galleryData. -->
-    </div>
+    <div class="gallery-grid" id="gallery-grid" role="list"></div>
+
   </div><!-- /gallery-main-portal -->
 
-
-  <!-- ═══════════════════════════════════
-       OVERLAY MODAL
-  ════════════════════════════════════ -->
+  <!-- OVERLAY MODAL -->
   <div id="gallery-overlay" class="gallery-overlay" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
     <button class="overlay-close" id="overlay-close" aria-label="Close photo viewer">✕</button>
     <button class="overlay-prev"  id="overlay-prev"  aria-label="Previous photo">&#8249;</button>
@@ -91,25 +83,21 @@
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════
-       FOOTER
-  ════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer id="footer-portal">
     <div class="footer-inner">
       <div class="footer-name">Luigi<br/><em>Bianchi</em></div>
       <ul class="footer-links">
         <li><a href="https://resumes.actorsaccess.com/luigibianchi">Actor's Access</a></li>
         <li><a href="https://www.backstage.com/tal/luigi-bianchi/">Backstage</a></li>
-        <li><a href="https://www.instagram.com/ctm.luigi/"">Instagram</a></li>
-        <li><a href="https://app.castingnetworks.com/talent/profile/250967826">Casting networks</a></li>
+        <li><a href="https://www.instagram.com/ctm.luigi/">Instagram</a></li>
+        <li><a href="https://app.castingnetworks.com/talent/profile/250967826">Casting Networks</a></li>
       </ul>
       <div class="footer-copy">© 2024 Luigi Bianchi</div>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════
-       SCRIPTS (end of body — DOM ready)
-  ════════════════════════════════════ -->
+  <script src="js/nav.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/index.js"></script>
 

@@ -15,12 +15,19 @@
 <!-- NAV -->
 <nav id="navbar">
   <span class="brand">Luigi Bianchi</span>
-  <ul class="nav-links">
+
+  <ul class="nav-links" id="nav-menu">
     <li><a href="/index.html">About</a></li>
     <li><a href="src/lbresume.pdf">Resume</a></li>
     <li><a href="/gallery.html">Gallery</a></li>
     <li><a href="/contact.html" class="nav-active">Contact</a></li>
   </ul>
+
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
 <!-- HEADER -->
@@ -52,10 +59,10 @@
       <div class="info-block reveal">
         <span class="info-label">Socials</span>
         <div class="social-links">
-            <a class="social-link" href="https://resumes.actorsaccess.com/luigibianchi">Actor's Access</a>
-            <a class="social-link" href="https://www.backstage.com/tal/luigi-bianchi/">Backstage</a>
-            <a class="social-link" href="https://www.instagram.com/ctm.luigi/"">Instagram</a>
-            <a class="social-link" href="https://app.castingnetworks.com/talent/profile/250967826">Casting networks</a>
+          <a class="social-link" href="https://resumes.actorsaccess.com/luigibianchi">Actor's Access</a>
+          <a class="social-link" href="https://www.backstage.com/tal/luigi-bianchi/">Backstage</a>
+          <a class="social-link" href="https://www.instagram.com/ctm.luigi/">Instagram</a>
+          <a class="social-link" href="https://app.castingnetworks.com/talent/profile/250967826">Casting Networks</a>
         </div>
       </div>
       <div class="geo-accent"></div>
@@ -98,7 +105,6 @@
           <span class="submit-arrow">→</span>
         </button>
 
-        <!-- Success / error states -->
         <div class="form-status" id="form-status" aria-live="polite"></div>
       </form>
     </div>
@@ -113,20 +119,15 @@
     <ul class="footer-links">
       <li><a href="https://resumes.actorsaccess.com/luigibianchi">Actor's Access</a></li>
       <li><a href="https://www.backstage.com/tal/luigi-bianchi/">Backstage</a></li>
-      <li><a href="https://www.instagram.com/ctm.luigi/"">Instagram</a></li>
-      <li><a href="https://app.castingnetworks.com/talent/profile/250967826">Casting networks</a></li>
+      <li><a href="https://www.instagram.com/ctm.luigi/">Instagram</a></li>
+      <li><a href="https://app.castingnetworks.com/talent/profile/250967826">Casting Networks</a></li>
     </ul>
     <div class="footer-copy">© 2024 Luigi Bianchi</div>
   </div>
 </footer>
 
+<script src="js/nav.js"></script>
 <script>
-  // Nav scroll state
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('solid', scrollY > 80);
-  });
-
   // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -135,8 +136,8 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Formspree AJAX submission
-  const form = document.getElementById('contact-form');
+  // Formspree AJAX
+  const form   = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
 
   if (form) {
@@ -149,7 +150,7 @@
       try {
         const res = await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          body:   new FormData(form),
           headers: { 'Accept': 'application/json' }
         });
 
